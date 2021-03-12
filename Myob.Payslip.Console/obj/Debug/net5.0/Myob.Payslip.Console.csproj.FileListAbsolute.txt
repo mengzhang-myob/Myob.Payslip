@@ -1,0 +1,15 @@
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.csprojAssemblyReference.cache
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.AssemblyInfoInputs.cache
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.AssemblyInfo.cs
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.csproj.CoreCompileInputs.cache
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Console.deps.json
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Console.runtimeconfig.json
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Console.runtimeconfig.dev.json
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Console.dll
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/ref/Myob.Payslip.Console.dll
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Console.pdb
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.dll
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/ref/Myob.Payslip.Console.dll
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.pdb
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.genruntimeconfig.cache

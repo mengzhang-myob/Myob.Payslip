@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Myob.Payslip.Domain/1.0.0": {
+        "runtime": {
+          "Myob.Payslip.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Myob.Payslip.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
