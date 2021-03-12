@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "Myob.Payslip.Console/1.0.0": {
+        "dependencies": {
+          "Myob.Payslip.Domain": "1.0.0"
+        },
         "runtime": {
           "Myob.Payslip.Console.dll": {}
+        }
+      },
+      "Myob.Payslip.Domain/1.0.0": {
+        "runtime": {
+          "Myob.Payslip.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Myob.Payslip.Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Myob.Payslip.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

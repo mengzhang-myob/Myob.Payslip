@@ -13,3 +13,6 @@
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/ref/Myob.Payslip.Console.dll
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.pdb
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.genruntimeconfig.cache
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Domain.dll
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/bin/Debug/net5.0/Myob.Payslip.Domain.pdb
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Console/obj/Debug/net5.0/Myob.Payslip.Console.csproj.CopyComplete
