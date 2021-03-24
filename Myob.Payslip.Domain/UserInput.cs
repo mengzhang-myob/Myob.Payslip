@@ -29,7 +29,7 @@ namespace Myob.Payslip.Domain
                 do
                 {
                     inputSalary = Console.ReadLine();
-                    promptUser = !payDetails.TrySetAnnualSalary(inputSalary);
+                    promptUser = !payDetails.TrySetAnnualSalary(inputSalary, payDetails);
                     if (promptUser)
                     {
                         Console.WriteLine("Wrong format, the annual salary should be numbers only, please re-enter your annual salary:");
@@ -69,10 +69,9 @@ namespace Myob.Payslip.Domain
         public void InputDates(PayDetails payDetails)
         {
             Console.WriteLine("Please enter your payment start date:");
-            string pStartDate = Console.ReadLine();
+            payDetails.PayStartDate = Console.ReadLine();
             Console.WriteLine("Please enter your payment end date:");
-            string pEndDate = Console.ReadLine();
-            payDetails.PayPeriod = pStartDate + "-" + pEndDate;
+            payDetails.PayEndDate = Console.ReadLine();
         }
     }
 }

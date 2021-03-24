@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using Myob.Payslip.Domain;
+﻿using Myob.Payslip.Domain;
 
 namespace Payslip
 {

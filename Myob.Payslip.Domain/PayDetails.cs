@@ -13,8 +13,11 @@ namespace Myob.Payslip.Domain
         public string FirstName { get; set; }
         public string SurName { get; set; }
         public string FullName => FirstName + " " + SurName;
+        public string PayStartDate { get; set; }
+        public string PayEndDate { get; set; }
 
-        public string PayPeriod { get; set; }
+        public string PayPeriod => PayStartDate + " - " + PayEndDate;
+        public double AnnualSalary { get; set; }
 
         public int IncomeTax { get; set; }
 
@@ -80,13 +83,18 @@ namespace Myob.Payslip.Domain
                 "Income Tax: " + IncomeTax + "\n" +
                 "Net Income: " + NetIncome + "\n" +
                 "Super: " + Super + "\n" + "\n" +
+                "Annual: " + AnnualSalary + "\n" + "\n" +
                 "Thank you for using MYOB!"
             );
         }
 
-        public bool TrySetAnnualSalary(string salary)
+        public bool TrySetAnnualSalary(string salary, PayDetails payDetails)
         {
             var isValid = Double.TryParse(salary, out double result);
+            if (isValid)
+            {
+                payDetails.AnnualSalary = result;
+            }
             return isValid;
             //TODO assign the value to annual salary property
         }
