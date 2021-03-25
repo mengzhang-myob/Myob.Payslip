@@ -5,7 +5,7 @@ namespace Myob.Payslip.Domain
 {
     public class UserInput
     {
-        Regex regexSalary = new Regex(@"^-?[0-9][0-9\.]+$"); //Regex to tolerate decimal point
+        // Regex regexSalary = new Regex(@"^-?[0-9][0-9\.]+$"); //Regex to tolerate decimal point
         public void InputName (PayDetails payDetails)
         {
             try {
@@ -52,13 +52,24 @@ namespace Myob.Payslip.Domain
         public void InputSuperRate (PayDetails payDetails)
         {
             Console.WriteLine("Please enter your super rate:");
+            string inputSupreRate;
+            var promptUser = false;
             try {
-                string inputRate = Console.ReadLine();
-                while (regexSalary.IsMatch(inputRate) == false){
-                    Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
-                    inputRate = Console.ReadLine();
-                }
-                double inputValue = Convert.ToDouble(inputRate);
+                do
+                {
+                    inputSupreRate = Console.ReadLine();
+                    promptUser = !payDetails.TrySetSuperRate(inputSupreRate, payDetails);
+                    if (promptUser)
+                    {
+                        Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
+                    }
+                } while (promptUser);
+                // while (regexSalary.IsMatch(inputRate) == false){
+                //     Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
+                //     inputRate = Console.ReadLine();
+                // }
+                // payDetails.Super = payDetails.CalcSuper(inputValue);
+                double inputValue = Convert.ToDouble(inputSupreRate);
                 payDetails.Super = payDetails.CalcSuper(inputValue);
             }
             catch (Exception e) {

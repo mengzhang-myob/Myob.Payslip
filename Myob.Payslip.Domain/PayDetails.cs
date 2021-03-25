@@ -24,6 +24,7 @@ namespace Myob.Payslip.Domain
         public int GrossIncome { get; set; }
         public int NetIncome { get; set; }
         public int Super { get; set; }
+        public double SuperRate { get; set; }
 
         public int CalcGrossIncome(double annualSalary)
         {
@@ -83,7 +84,6 @@ namespace Myob.Payslip.Domain
                 "Income Tax: " + IncomeTax + "\n" +
                 "Net Income: " + NetIncome + "\n" +
                 "Super: " + Super + "\n" + "\n" +
-                "Annual: " + AnnualSalary + "\n" + "\n" +
                 "Thank you for using MYOB!"
             );
         }
@@ -97,6 +97,17 @@ namespace Myob.Payslip.Domain
             }
             return isValid;
             //TODO assign the value to annual salary property
+        }
+
+        public bool TrySetSuperRate(string superRate, PayDetails payDetails)
+        {
+            var isValid = Double.TryParse(superRate, out double result);
+            if (isValid)
+            {
+                payDetails.SuperRate = result;
+            }
+
+            return isValid;
         }
     }
 }
