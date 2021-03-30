@@ -40,9 +40,7 @@ namespace Myob.Payslip.Domain
                     inputSalary = Console.ReadLine(); 
                 }*/
                 double inputValue = Convert.ToDouble(inputSalary);
-                payDetails.GrossIncome = payDetails.CalcGrossIncome(inputValue);
                 payDetails.IncomeTax = payDetails.CalcIncomeTax(inputValue);
-                payDetails.NetIncome = payDetails.CalcNetIncome();
             }
             catch (Exception e) {
                 throw e;
@@ -69,8 +67,6 @@ namespace Myob.Payslip.Domain
                 //     inputRate = Console.ReadLine();
                 // }
                 // payDetails.Super = payDetails.CalcSuper(inputValue);
-                double inputValue = Convert.ToDouble(inputSupreRate);
-                payDetails.Super = payDetails.CalcSuper(inputValue);
             }
             catch (Exception e) {
                 throw e;

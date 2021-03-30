@@ -20,10 +20,9 @@ namespace Myob.Payslip.Domain
         public double AnnualSalary { get; set; }
 
         public int IncomeTax { get; set; }
-
-        public int GrossIncome { get; set; }
-        public int NetIncome { get; set; }
-        public int Super { get; set; }
+        public int GrossIncome => (int) Math.Floor(AnnualSalary / 12);
+        public int NetIncome => GrossIncome - IncomeTax;
+        public int Super => (int) Math.Floor(GrossIncome * (SuperRate / 100));
         public double SuperRate { get; set; }
 
         public int CalcGrossIncome(double annualSalary)
