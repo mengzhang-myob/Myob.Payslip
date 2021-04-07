@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Myob.Payslip.Domain
 {
@@ -7,9 +8,42 @@ namespace Myob.Payslip.Domain
     {
         //Q regarding property: What to do with the calculation in the setter (no arguments allowed in the setter, how to parse taxRate/taxThreshold in)?
         //My answers: Create independent function for calculation (not sure) 
+        
+        /*
         private static List<double> taxRate = new List<double> {0.19, 0.325, 0.37, 0.45};
         private static List<int> taxThreshold = new List<int> {18200, 37000, 87000, 180000};
         private static List<int> taxBracket = new List<int> {0, 3572, 19822, 54232};
+        */
+
+        private static List<TaxBracket> _taxBrackets = new List<TaxBracket>
+        {
+            new (0, 18200, 0, 0),
+            new (18200, 37000, 0, 0.19),
+            new (37000, 87000, 3572, 0.325),
+            new (87000, 180000, 19822, 0.37),
+            new (180000, null, 54232, 0.45),
+        };
+
+        //This function is just an experiment
+        /*
+        public IEnumerable<double?> findRange (double annualSalary)
+        {
+            return
+                from taxBracket in _taxBrackets
+                where annualSalary <= taxBracket.Maximum && annualSalary >= taxBracket.Minimum
+                select taxBracket.Basic + (taxBracket.Maximum - annualSalary) * taxBracket.Rate;
+        }
+        */
+
+        public int calcIncomeTax(double annualSalary)
+        {
+            var targetBracket = _taxBrackets.FirstOrDefault(b => annualSalary <= b.Maximum && annualSalary > b.Minimum);
+            Console.Write(targetBracket.Basic + " " + targetBracket.Maximum + " " + annualSalary + " " + targetBracket.Rate + " " + Math.Ceiling((targetBracket.Basic +
+                (targetBracket.Maximum ?? default(double) - annualSalary) *
+                targetBracket.Rate)/12));
+                return (int) Math.Ceiling(
+                    (targetBracket.Basic + (annualSalary - targetBracket.Minimum) * targetBracket.Rate)/12);
+        }
         public string FirstName { get; set; }
         public string SurName { get; set; }
         public string FullName => FirstName + " " + SurName;
@@ -29,8 +63,11 @@ namespace Myob.Payslip.Domain
         {
             return (int) Math.Floor(annualSalary / 12);
         }
-
-        public int CalcIncomeTax(double annualSalary)
+        
+        
+        //This function is no longer needed after introducing function calcIncomeTax with LINQ command.
+        
+        /* public int CalcIncomeTax(double annualSalary)
         {
             if (annualSalary <= taxThreshold[0])
             {
@@ -62,6 +99,7 @@ namespace Myob.Payslip.Domain
 
             return 0;
         }
+        */
 
         public int CalcNetIncome()
         {

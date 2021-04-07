@@ -1,7 +1,7 @@
 using System;
-using System.Text.RegularExpressions;
+using Myob.Payslip.Domain;
 
-namespace Myob.Payslip.Domain
+namespace Myob.Payslip.Console
 {
     public class UserInput
     {
@@ -9,13 +9,13 @@ namespace Myob.Payslip.Domain
         public void InputName (PayDetails payDetails)
         {
             try {
-                Console.WriteLine("Please input your name:");
-                payDetails.FirstName = Console.ReadLine();
-                Console.WriteLine("Please input your surname:");
-                payDetails.SurName = Console.ReadLine();
+                System.Console.WriteLine("Please input your name:");
+                payDetails.FirstName = System.Console.ReadLine();
+                System.Console.WriteLine("Please input your surname:");
+                payDetails.SurName = System.Console.ReadLine();
             }
             catch(Exception e) {
-                Console.WriteLine("The name input is invalid" + "\n" + e.Message);
+                System.Console.WriteLine("The name input is invalid" + "\n" + e.Message);
             }
         }
 
@@ -23,16 +23,16 @@ namespace Myob.Payslip.Domain
         {
             try
             {
-                Console.WriteLine("Please enter your annual salary:");
+                System.Console.WriteLine("Please enter your annual salary:");
                 string inputSalary;
                 var promptUser = false;
                 do
                 {
-                    inputSalary = Console.ReadLine();
+                    inputSalary = System.Console.ReadLine();
                     promptUser = !payDetails.TrySetAnnualSalary(inputSalary, payDetails);
                     if (promptUser)
                     {
-                        Console.WriteLine("Wrong format, the annual salary should be numbers only, please re-enter your annual salary:");
+                        System.Console.WriteLine("Wrong format, the annual salary should be numbers only, please re-enter your annual salary:");
                     }
                 } while (promptUser);
                 /*  while (regexSalary.IsMatch(inputSalary) == false){
@@ -40,7 +40,7 @@ namespace Myob.Payslip.Domain
                     inputSalary = Console.ReadLine(); 
                 }*/
                 double inputValue = Convert.ToDouble(inputSalary);
-                payDetails.IncomeTax = payDetails.CalcIncomeTax(inputValue);
+                payDetails.IncomeTax = payDetails.calcIncomeTax(inputValue);
             }
             catch (Exception e) {
                 throw e;
@@ -49,17 +49,17 @@ namespace Myob.Payslip.Domain
 
         public void InputSuperRate (PayDetails payDetails)
         {
-            Console.WriteLine("Please enter your super rate:");
+            System.Console.WriteLine("Please enter your super rate:");
             string inputSupreRate;
             var promptUser = false;
             try {
                 do
                 {
-                    inputSupreRate = Console.ReadLine();
+                    inputSupreRate = System.Console.ReadLine();
                     promptUser = !payDetails.TrySetSuperRate(inputSupreRate, payDetails);
                     if (promptUser)
                     {
-                        Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
+                        System.Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
                     }
                 } while (promptUser);
                 // while (regexSalary.IsMatch(inputRate) == false){
@@ -75,10 +75,10 @@ namespace Myob.Payslip.Domain
 
         public void InputDates(PayDetails payDetails)
         {
-            Console.WriteLine("Please enter your payment start date:");
-            payDetails.PayStartDate = Console.ReadLine();
-            Console.WriteLine("Please enter your payment end date:");
-            payDetails.PayEndDate = Console.ReadLine();
+            System.Console.WriteLine("Please enter your payment start date:");
+            payDetails.PayStartDate = System.Console.ReadLine();
+            System.Console.WriteLine("Please enter your payment end date:");
+            payDetails.PayEndDate = System.Console.ReadLine();
         }
     }
 }

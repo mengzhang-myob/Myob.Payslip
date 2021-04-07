@@ -1,6 +1,6 @@
 ﻿using Myob.Payslip.Domain;
 
-namespace Payslip
+namespace Myob.Payslip.Console
 {
     class Program
     {
