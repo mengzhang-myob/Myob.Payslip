@@ -6,15 +6,6 @@ namespace Myob.Payslip.Domain
 {
     public class PayDetails
     {
-        //Q regarding property: What to do with the calculation in the setter (no arguments allowed in the setter, how to parse taxRate/taxThreshold in)?
-        //My answers: Create independent function for calculation (not sure) 
-        
-        /*
-        private static List<double> taxRate = new List<double> {0.19, 0.325, 0.37, 0.45};
-        private static List<int> taxThreshold = new List<int> {18200, 37000, 87000, 180000};
-        private static List<int> taxBracket = new List<int> {0, 3572, 19822, 54232};
-        */
-
         private static List<TaxBracket> _taxBrackets = new List<TaxBracket>
         {
             new (0, 18200, 0, 0),
@@ -25,6 +16,7 @@ namespace Myob.Payslip.Domain
         };
 
         //This function is just an experiment
+        
         /*
         public IEnumerable<double?> findRange (double annualSalary)
         {
@@ -34,14 +26,12 @@ namespace Myob.Payslip.Domain
                 select taxBracket.Basic + (taxBracket.Maximum - annualSalary) * taxBracket.Rate;
         }
         */
+        
 
         public int calcIncomeTax(double annualSalary)
         {
-            var targetBracket = _taxBrackets.FirstOrDefault(b => annualSalary <= b.Maximum && annualSalary > b.Minimum);
-            Console.Write(targetBracket.Basic + " " + targetBracket.Maximum + " " + annualSalary + " " + targetBracket.Rate + " " + Math.Ceiling((targetBracket.Basic +
-                (targetBracket.Maximum ?? default(double) - annualSalary) *
-                targetBracket.Rate)/12));
-                return (int) Math.Ceiling(
+            var targetBracket = _taxBrackets.SingleOrDefault(b => annualSalary <= b.Maximum && annualSalary > b.Minimum);
+            return (int) Math.Ceiling(
                     (targetBracket.Basic + (annualSalary - targetBracket.Minimum) * targetBracket.Rate)/12);
         }
         public string FirstName { get; set; }
@@ -58,59 +48,6 @@ namespace Myob.Payslip.Domain
         public int NetIncome => GrossIncome - IncomeTax;
         public int Super => (int) Math.Floor(GrossIncome * (SuperRate / 100));
         public double SuperRate { get; set; }
-
-        public int CalcGrossIncome(double annualSalary)
-        {
-            return (int) Math.Floor(annualSalary / 12);
-        }
-        
-        
-        //This function is no longer needed after introducing function calcIncomeTax with LINQ command.
-        
-        /* public int CalcIncomeTax(double annualSalary)
-        {
-            if (annualSalary <= taxThreshold[0])
-            {
-                // When income <= 18200
-                return taxBracket[0];
-            }
-            else if (annualSalary <= taxThreshold[1])
-            {
-                // When 18201 < income <= 37000
-                return (int) Math.Ceiling(((annualSalary - taxThreshold[0]) * taxRate[0]) / 12);
-            }
-            else if (taxThreshold[1] < annualSalary && annualSalary <= taxThreshold[2])
-            {
-                // When 37000 < income <= 87000
-                return (int) Math.Ceiling(((annualSalary - taxThreshold[1]) * taxRate[1] + taxBracket[1]) / 12);
-            }
-            else if (taxThreshold[2] < annualSalary && annualSalary <= taxThreshold[3])
-            {
-                // When 87000 < income <= 180000
-                return (int) Math.Ceiling(
-                    ((annualSalary - taxThreshold[2]) * taxRate[2] + taxBracket[1] + taxBracket[2]) / 12);
-            }
-            else if (taxThreshold[3] < annualSalary)
-            {
-                // When 180000 < income
-                return (int) Math.Ceiling(((annualSalary - taxThreshold[3]) * taxRate[3] + taxBracket[1] +
-                                           taxBracket[2] + taxBracket[3]) / 12);
-            }
-
-            return 0;
-        }
-        */
-
-        public int CalcNetIncome()
-        {
-            return GrossIncome - IncomeTax;
-        }
-
-        public int CalcSuper(double superRate)
-        {
-            return (int) Math.Floor(GrossIncome * (superRate / 100));
-        }
-
         public void PrintPayDetails()
         {
             Console.WriteLine(
