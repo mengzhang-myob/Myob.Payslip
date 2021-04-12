@@ -97,3 +97,5 @@
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.UnitTests/obj/Debug/net5.0/ref/Myob.Payslip.UnitTests.dll
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.UnitTests/obj/Debug/net5.0/Myob.Payslip.UnitTests.pdb
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.UnitTests/obj/Debug/net5.0/Myob.Payslip.UnitTests.genruntimeconfig.cache
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.UnitTests/bin/Debug/net5.0/Myob.Payslip.Domain.dll
+/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.UnitTests/bin/Debug/net5.0/Myob.Payslip.Domain.pdb

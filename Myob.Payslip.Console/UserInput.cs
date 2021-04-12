@@ -21,26 +21,30 @@ namespace Myob.Payslip.Console
 
         public void InputAnnualSalary (PayDetails payDetails)
         {
-            try
-            {
+            try {
                 System.Console.WriteLine("Please enter your annual salary:");
                 string inputSalary;
-                var promptUser = false;
+                var promptUserFormat = false;
+                var promptUserNegative = false;
                 do
                 {
                     inputSalary = System.Console.ReadLine();
-                    promptUser = !payDetails.TrySetAnnualSalary(inputSalary, payDetails);
-                    if (promptUser)
+                    promptUserFormat = !payDetails.TrySetAnnualSalary(inputSalary);
+                    promptUserNegative = !payDetails.AnnualSalaryWasNegative;
+                    if (promptUserFormat)
                     {
                         System.Console.WriteLine("Wrong format, the annual salary should be numbers only, please re-enter your annual salary:");
                     }
-                } while (promptUser);
+                    else if (!promptUserNegative)
+                    {
+                        System.Console.WriteLine("The annual salary you just entered is negative, and has been automatically converted to " + payDetails.AnnualSalary);
+                    }
+                } while (promptUserFormat);
                 /*  while (regexSalary.IsMatch(inputSalary) == false){
                     Console.WriteLine("Wrong format, the annual salary should be numbers only, please re-enter your annual salary:");
                     inputSalary = Console.ReadLine(); 
                 }*/
-                double inputValue = Convert.ToDouble(inputSalary);
-                payDetails.IncomeTax = payDetails.calcIncomeTax(inputValue);
+                payDetails.calcIncomeTax();
             }
             catch (Exception e) {
                 throw e;
@@ -49,19 +53,25 @@ namespace Myob.Payslip.Console
 
         public void InputSuperRate (PayDetails payDetails)
         {
-            System.Console.WriteLine("Please enter your super rate:");
-            string inputSupreRate;
-            var promptUser = false;
             try {
+                System.Console.WriteLine("Please enter your super rate:");
+                string inputSuperRate;
+                var promptUserFormat = false;
+                var promptUserNegative = false;
                 do
                 {
-                    inputSupreRate = System.Console.ReadLine();
-                    promptUser = !payDetails.TrySetSuperRate(inputSupreRate, payDetails);
-                    if (promptUser)
+                    inputSuperRate = System.Console.ReadLine();
+                    promptUserFormat = !payDetails.TrySetSuperRate(inputSuperRate);
+                    promptUserNegative = !payDetails.AnnualSalaryWasNegative;
+                    if (promptUserFormat)
                     {
                         System.Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
                     }
-                } while (promptUser);
+                    else if (!promptUserNegative)
+                    {
+                        System.Console.WriteLine("The super rate you just entered is negative, and has been automatically converted to " + payDetails.SuperRate);
+                    }
+                } while (promptUserFormat);
                 // while (regexSalary.IsMatch(inputRate) == false){
                 //     Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
                 //     inputRate = Console.ReadLine();

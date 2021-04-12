@@ -1225,6 +1225,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "Myob.Payslip.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Myob.Payslip.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Myob.Payslip.Domain.dll": {}
+        }
       }
     }
   },
@@ -4613,11 +4623,17 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "Myob.Payslip.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
+      "msbuildProject": "../Myob.Payslip.Domain/Myob.Payslip.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.NET.Test.Sdk >= 16.5.0",
+      "Myob.Payslip.Domain >= 1.0.0",
       "NUnit >= 3.12.0",
       "NUnit3TestAdapter >= 3.16.1"
     ]
@@ -4646,7 +4662,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj": {
+              "projectPath": "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

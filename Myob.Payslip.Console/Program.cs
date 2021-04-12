@@ -15,6 +15,7 @@ namespace Myob.Payslip.Console
             userInput.InputSuperRate(payDetails);
             userInput.InputDates(payDetails);
             payDetails.PrintPayDetails();
+            //TODO: set print as UserInput()
         }
     }
 }
