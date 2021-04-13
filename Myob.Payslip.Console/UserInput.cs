@@ -25,19 +25,17 @@ namespace Myob.Payslip.Console
                 System.Console.WriteLine("Please enter your annual salary:");
                 string inputSalary;
                 var promptUserFormat = false;
-                var promptUserNegative = false;
                 do
                 {
                     inputSalary = System.Console.ReadLine();
                     promptUserFormat = !payDetails.TrySetAnnualSalary(inputSalary);
-                    promptUserNegative = !payDetails.AnnualSalaryWasNegative;
                     if (promptUserFormat)
                     {
                         System.Console.WriteLine("Wrong format, the annual salary should be numbers only, please re-enter your annual salary:");
                     }
-                    else if (!promptUserNegative)
+                    else
                     {
-                        System.Console.WriteLine("The annual salary you just entered is negative, and has been automatically converted to " + payDetails.AnnualSalary);
+                        System.Console.WriteLine("You entered annual salary: " + payDetails.AnnualSalary);
                     }
                 } while (promptUserFormat);
                 /*  while (regexSalary.IsMatch(inputSalary) == false){
@@ -57,19 +55,17 @@ namespace Myob.Payslip.Console
                 System.Console.WriteLine("Please enter your super rate:");
                 string inputSuperRate;
                 var promptUserFormat = false;
-                var promptUserNegative = false;
                 do
                 {
                     inputSuperRate = System.Console.ReadLine();
                     promptUserFormat = !payDetails.TrySetSuperRate(inputSuperRate);
-                    promptUserNegative = !payDetails.AnnualSalaryWasNegative;
                     if (promptUserFormat)
                     {
                         System.Console.WriteLine("Wrong format, the super rate should be numbers only, please re-enter your super rate:");
                     }
-                    else if (!promptUserNegative)
+                    else
                     {
-                        System.Console.WriteLine("The super rate you just entered is negative, and has been automatically converted to " + payDetails.SuperRate);
+                        System.Console.WriteLine("You entered super rate: " + payDetails.SuperRate);
                     }
                 } while (promptUserFormat);
                 // while (regexSalary.IsMatch(inputRate) == false){

@@ -48,14 +48,12 @@ namespace Myob.Payslip.Domain
 
         public string PayPeriod => PayStartDate + " - " + PayEndDate;
         public double AnnualSalary { get; set; }
-        public bool AnnualSalaryWasNegative { get; set; }
 
         public int IncomeTax { get; set; } //TODO maybe call calcIncomeTax in  the setter with arrows
         public int GrossIncome => (int) Math.Floor(AnnualSalary / 12); //=> means every time it's being accessed, it will recalculate (
         public int NetIncome => GrossIncome - IncomeTax;
         public int Super => (int) Math.Floor(GrossIncome * (SuperRate / 100));
         public double SuperRate { get; set; }
-        public bool SuperRateWasNegative { get; set; }
         public void PrintPayDetails()
         {
             Console.WriteLine(
@@ -83,16 +81,8 @@ namespace Myob.Payslip.Domain
             //TODO handle negative value, consider test case with negative value and a false output -> DONE
             if (isValid)
             {
-                if (result < 0)
-                {
-                    AnnualSalary = result * -1;
-                    AnnualSalaryWasNegative = true;
-                }
-                else
-                {
-                    AnnualSalary = result;
-                    AnnualSalaryWasNegative = false;
-                }
+
+                AnnualSalary = Math.Abs(result);
             }
             return isValid;
             //TODO assign the value to annual salary property, instead of parsing object as parameter -> DONE
@@ -104,16 +94,8 @@ namespace Myob.Payslip.Domain
             //TODO handle negative value 
             if (isValid)
             {
-                if (result < 0)
-                {
-                    SuperRate = result * -1;
-                    SuperRateWasNegative = true;
-                }
-                else
-                {
-                    SuperRate = result;
-                    SuperRateWasNegative = false;
-                }
+
+                SuperRate = Math.Abs(result);
             }
 
             return isValid;
