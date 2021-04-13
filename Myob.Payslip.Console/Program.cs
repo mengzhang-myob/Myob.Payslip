@@ -8,6 +8,7 @@ namespace Myob.Payslip.Console
         // string inputValue;
         static void Main(string[] args)
         {
+            System.Console.WriteLine("This program calculate the income tax, gross income, net income and super based on positive values");
             PayDetails payDetails = new PayDetails();
             UserInput userInput = new UserInput();
             userInput.InputName(payDetails);
