@@ -124,5 +124,34 @@ namespace Myob.Payslip.UnitTests
             Assert.AreEqual(3516, payDetails.NetIncome);
             Assert.AreEqual(395, payDetails.Super);
         }
+        
+        [Test] public void IncomeTax_ShouldFallInTheLastBracket_IfSalaryExactlyEqualsBracketMinimum()
+        {
+            var salary = 180000.5;
+            var super = 9.5;
+            var payDetails = new PayDetails();
+            payDetails.TrySetAnnualSalary(salary.ToString());
+            payDetails.calcIncomeTax();
+            payDetails.TrySetSuperRate(super.ToString());
+            Assert.AreEqual(15000, payDetails.GrossIncome);
+            Assert.AreEqual(4520, payDetails.IncomeTax);
+            Assert.AreEqual(10480, payDetails.NetIncome);
+            Assert.AreEqual(1425, payDetails.Super);
+        }
+        
+        [Test] 
+        public void IncomeTax_ShouldFallInTheMiddleBracket_IfSalaryExactlyEqualsBracketMinimum()
+        {
+            var salary = 87000.5;
+            var super = 9.5;
+            var payDetails = new PayDetails();
+            payDetails.TrySetAnnualSalary(salary.ToString());
+            payDetails.calcIncomeTax();
+            payDetails.TrySetSuperRate(super.ToString());
+            Assert.AreEqual(7250, payDetails.GrossIncome);
+            Assert.AreEqual(1652, payDetails.IncomeTax);
+            Assert.AreEqual(5598, payDetails.NetIncome);
+            Assert.AreEqual(688, payDetails.Super);
+        }
     }
 }

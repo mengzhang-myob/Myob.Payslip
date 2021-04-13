@@ -9,10 +9,10 @@ namespace Myob.Payslip.Domain
         private static List<TaxBracket> _taxBrackets = new List<TaxBracket>
         {
             new (0, 18200, 0, 0),
-            new (18200, 37000, 0, 0.19),
-            new (37000, 87000, 3572, 0.325),
-            new (87000, 180000, 19822, 0.37),
-            new (180000, null, 54232, 0.45),
+            new (18201, 37000, 0, 0.19),
+            new (37001, 87000, 3572, 0.325),
+            new (87001, 180000, 19822, 0.37),
+            new (180001, null, 54232, 0.45),
         };
 
         //This function is just an experiment
@@ -30,17 +30,11 @@ namespace Myob.Payslip.Domain
 
         public void calcIncomeTax()
         {
-            var targetBracket = _taxBrackets.SingleOrDefault(b => AnnualSalary <= b.Maximum && AnnualSalary > b.Minimum);
-            if (AnnualSalary > 180000)
-            {
-                targetBracket = _taxBrackets.SingleOrDefault(b => b.Minimum == 180000);
-            }
-
-            if (AnnualSalary == 0)
-            {
-                targetBracket = new TaxBracket(0, 0, 0, 0);
-
-            }
+            var targetBracket = _taxBrackets.SingleOrDefault(b => 
+                (Math.Floor( AnnualSalary) <= b.Maximum &&  AnnualSalary > b.Minimum)
+                || (b.Maximum == null &&  AnnualSalary > b.Minimum)
+                || (Math.Floor(AnnualSalary) <= b.Maximum &&  AnnualSalary == b.Minimum)
+                );
             //TODO improve the LINQ statement when annual salary is greater than 180000.
             IncomeTax = (int) Math.Ceiling(
                     (targetBracket.Basic + (AnnualSalary - targetBracket.Minimum) * targetBracket.Rate)/12);
