@@ -28,7 +28,7 @@ namespace Myob.Payslip.Domain
         */
         
 
-        public void calcIncomeTax()
+        public int calcIncomeTax()
         {
             var targetBracket = _taxBrackets.SingleOrDefault(b => 
                 (Math.Floor( AnnualSalary) <= b.Maximum &&  AnnualSalary > b.Minimum)
@@ -36,10 +36,10 @@ namespace Myob.Payslip.Domain
                 || (Math.Floor(AnnualSalary) <= b.Maximum &&  AnnualSalary == b.Minimum)
                 );
             //TODO improve the LINQ statement when annual salary is greater than 180000.
-            IncomeTax = (int) Math.Ceiling(
+            return (int) Math.Ceiling(
                     (targetBracket.Basic + (AnnualSalary - targetBracket.Minimum) * targetBracket.Rate)/12);
         }
-        
+
         public string FirstName { get; set; }
         public string SurName { get; set; }
         public string FullName => FirstName + " " + SurName;
@@ -49,7 +49,7 @@ namespace Myob.Payslip.Domain
         public string PayPeriod => PayStartDate + " - " + PayEndDate;
         public double AnnualSalary { get; set; }
 
-        public int IncomeTax { get; set; } //TODO maybe call calcIncomeTax in  the setter with arrows
+        public int IncomeTax => calcIncomeTax(); //TODO maybe call calcIncomeTax in  the setter with arrows
         public int GrossIncome => (int) Math.Floor(AnnualSalary / 12); //=> means every time it's being accessed, it will recalculate (
         public int NetIncome => GrossIncome - IncomeTax;
         public int Super => (int) Math.Floor(GrossIncome * (SuperRate / 100));
