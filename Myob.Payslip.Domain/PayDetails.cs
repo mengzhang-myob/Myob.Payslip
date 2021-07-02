@@ -49,7 +49,7 @@ namespace Myob.Payslip.Domain
         public string PayPeriod => PayStartDate + " - " + PayEndDate;
         public double AnnualSalary { get; set; }
 
-        public int IncomeTax => calcIncomeTax(); //TODO maybe call calcIncomeTax in  the setter with arrows
+        public int IncomeTax => calcIncomeTax();//TODO maybe call calcIncomeTax in  the setter with arrows
         public int GrossIncome => (int) Math.Floor(AnnualSalary / 12); //=> means every time it's being accessed, it will recalculate (
         public int NetIncome => GrossIncome - IncomeTax;
         public int Super => (int) Math.Floor(GrossIncome * (SuperRate / 100));
