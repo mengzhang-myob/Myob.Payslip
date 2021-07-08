@@ -28,6 +28,7 @@ namespace Myob.Payslip.ApiTests
             // Act
             var actionResult = mockController.Post(testResquest);
             var okResult = actionResult as OkObjectResult;
+            // Assert
             Assert.Equal(200, okResult.StatusCode);
             Assert.Equal(
                 JsonSerializer.Serialize(new PayDetailsRequest.PayDetailsResponse(
@@ -55,8 +56,8 @@ namespace Myob.Payslip.ApiTests
             // Act
             var actionResult = mockController.Post(testResquest);
             var UnprocessableEntityResult = actionResult as UnprocessableEntityResult;
+            // Assert
             Assert.Equal(422, UnprocessableEntityResult.StatusCode);
-
         }
     }
 }
