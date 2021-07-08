@@ -3,7 +3,11 @@
   &lt;Assembly Path="/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/System.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ce18fadd_002D8393_002D4f35_002Dbb5e_002D02d256bcc5df/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IncomeTax_ShouldFallIntoFirstBracket" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::A5B25FB0-B247-464E-B764-E0449A42CEC3::net5.0::Myob.Payslip.UnitTests.PayDetailsTests&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+  &lt;Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;NUnit3x::A5B25FB0-B247-464E-B764-E0449A42CEC3::net5.0::Myob.Payslip.UnitTests.PayDetailsTests&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+    &lt;Project Location="/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.ApiTests" Presentation="&amp;lt;Myob.Payslip.ApiTests&amp;gt;" /&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>

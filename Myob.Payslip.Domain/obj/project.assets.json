@@ -26,7 +26,8 @@
         "net5.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://www.myget.org/F/my-my/auth/cee449f6-6288-4d0c-9a50-af2244959894/api/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {

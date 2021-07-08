@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myob.Payslip.UnitTests", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myob.Payslip.Api", "Myob.Payslip.Api\Myob.Payslip.Api.csproj", "{EC004247-6492-4D28-9243-96D1EBA03A97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myob.Payslip.ApiTests", "Myob.Payslip.ApiTests\Myob.Payslip.ApiTests.csproj", "{EF990E7C-64C0-41B2-9B62-9D649E216807}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{EC004247-6492-4D28-9243-96D1EBA03A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC004247-6492-4D28-9243-96D1EBA03A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC004247-6492-4D28-9243-96D1EBA03A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF990E7C-64C0-41B2-9B62-9D649E216807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF990E7C-64C0-41B2-9B62-9D649E216807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF990E7C-64C0-41B2-9B62-9D649E216807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF990E7C-64C0-41B2-9B62-9D649E216807}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

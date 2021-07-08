@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Myob.Payslip.Api\Myob.Payslip.Api.csproj" />
       <ProjectReference Include="..\Myob.Payslip.Domain\Myob.Payslip.Domain.csproj" />
     </ItemGroup>
 
