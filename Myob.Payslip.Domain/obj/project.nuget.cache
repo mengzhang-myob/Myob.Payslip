@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZGoaYrTzY7MZNe4KCNG6zOsPxziFcXlpSToyCaBmrWIrfgJaLjDu43zPhP2agtr72ncBy2H155+475KvapvsWQ==",
+  "dgSpecHash": "oprtZ8KztopEFPj06DKzukNPXVuS4/ZpIF0RPmGpJ0mK7sqWcYmlDEtWKG1hQNcho+xP3cOitTWPtD+dyKhPiA==",
   "success": true,
-  "projectFilePath": "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
+  "projectFilePath": "/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

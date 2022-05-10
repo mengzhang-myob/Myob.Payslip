@@ -10,3 +10,15 @@
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.dll
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/ref/Myob.Payslip.Domain.dll
 /Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.pdb
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.dll
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.pdb
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/bin/Debug/net5.0/Myob.Payslip.Domain.deps.json
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/bin/Debug/net5.0/Myob.Payslip.Domain.dll
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/bin/Debug/net5.0/ref/Myob.Payslip.Domain.dll
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/bin/Debug/net5.0/Myob.Payslip.Domain.pdb
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.csproj.AssemblyReference.cache
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.AssemblyInfoInputs.cache
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.AssemblyInfo.cs
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/Myob.Payslip.Domain.csproj.CoreCompileInputs.cache
+/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/Debug/net5.0/ref/Myob.Payslip.Domain.dll

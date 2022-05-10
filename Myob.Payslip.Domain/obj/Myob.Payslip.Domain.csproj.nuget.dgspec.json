@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj": {}
+    "/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj": {}
   },
   "projects": {
-    "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj": {
+    "/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
+        "projectUniqueName": "/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
         "projectName": "Myob.Payslip.Domain",
-        "projectPath": "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
-        "packagesPath": "/Users/meng.zhang/.nuget/packages/",
-        "outputPath": "/Users/meng.zhang/RiderProjects/learning/Myob.Payslip/Myob.Payslip.Domain/obj/",
+        "projectPath": "/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/Myob.Payslip.Domain.csproj",
+        "packagesPath": "/Users/Meng.Zhang/.nuget/packages/",
+        "outputPath": "/Users/Meng.Zhang/Documents/GitHub/Myob.Payslip/Myob.Payslip.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/meng.zhang/.nuget/NuGet/NuGet.Config"
+          "/Users/Meng.Zhang/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.407/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -154,4 +154,6 @@ namespace Myob.Payslip.UnitTests
             Assert.AreEqual(688, payDetails.Super);
         }
     }
+    
+    
 }
